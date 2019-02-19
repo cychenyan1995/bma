@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.glsx.oms.bigdata.admin.bma.salesTask.mapper.SalesTaskMapper">
+	<resultMap id="BaseResultMap"
+		type="com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTask">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="month" jdbcType="VARCHAR" property="month" />
+		<result column="area" jdbcType="VARCHAR" property="area" />
+		<result column="regional_manager_leader" jdbcType="VARCHAR"
+			property="regionalManagerLeader" />
+		<result column="regional_manager" jdbcType="VARCHAR" property="regionalManager" />
+		<result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+		<result column="sp_name" jdbcType="VARCHAR" property="spName" />
+		<result column="tasknum_dvd" jdbcType="INTEGER" property="tasknumDvd" />
+		<result column="tasknum_gps" jdbcType="INTEGER" property="tasknumGps" />
+		<result column="tasknum_yunjing" jdbcType="INTEGER" property="tasknumYunjing" />
+		<result column="tasknum_didihu_service" jdbcType="INTEGER"
+			property="tasknumDidihuService" />
+		<result column="tasknum_wireless_charge" jdbcType="INTEGER"
+			property="tasknumWirelessCharge" />
+		<result column="tasknum_rearview" jdbcType="INTEGER" property="tasknumRearview" />
+		<result column="tasknum_function_rearview" jdbcType="INTEGER"
+			property="tasknumFunctionRearview" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, month, area, regional_manager_leader, regional_manager,
+		biz_type,
+		sp_name, tasknum_dvd,
+		tasknum_gps, tasknum_yunjing,
+		tasknum_didihu_service, tasknum_wireless_charge,
+		tasknum_rearview,
+		tasknum_function_rearview, create_time, update_time
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from tbl_sales_task
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from
+		tbl_sales_task
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTask">
+		insert into tbl_sales_task (id, month, area,
+		regional_manager_leader, regional_manager,
+		biz_type, sp_name,
+		tasknum_dvd,
+		tasknum_gps, tasknum_yunjing, tasknum_didihu_service,
+		tasknum_wireless_charge, tasknum_rearview,
+		tasknum_function_rearview,
+		create_time,
+		update_time)
+		values (#{id,jdbcType=INTEGER},
+		#{month,jdbcType=VARCHAR},
+		#{area,jdbcType=VARCHAR},
+		#{regionalManagerLeader,jdbcType=VARCHAR},
+		#{regionalManager,jdbcType=VARCHAR},
+		#{bizType,jdbcType=VARCHAR},
+		#{spName,jdbcType=VARCHAR}, #{tasknumDvd,jdbcType=INTEGER},
+		#{tasknumGps,jdbcType=INTEGER}, #{tasknumYunjing,jdbcType=INTEGER},
+		#{tasknumDidihuService,jdbcType=INTEGER},
+		#{tasknumWirelessCharge,jdbcType=INTEGER},
+		#{tasknumRearview,jdbcType=INTEGER},
+		#{tasknumFunctionRearview,jdbcType=INTEGER},
+		#{createTime,jdbcType=TIMESTAMP},
+		#{updateTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTask">
+		insert into tbl_sales_task
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="month != null">
+				month,
+			</if>
+			<if test="area != null">
+				area,
+			</if>
+			<if test="regionalManagerLeader != null">
+				regional_manager_leader,
+			</if>
+			<if test="regionalManager != null">
+				regional_manager,
+			</if>
+			<if test="bizType != null">
+				biz_type,
+			</if>
+			<if test="spName != null">
+				sp_name,
+			</if>
+			<if test="tasknumDvd != null">
+				tasknum_dvd,
+			</if>
+			<if test="tasknumGps != null">
+				tasknum_gps,
+			</if>
+			<if test="tasknumYunjing != null">
+				tasknum_yunjing,
+			</if>
+			<if test="tasknumDidihuService != null">
+				tasknum_didihu_service,
+			</if>
+			<if test="tasknumWirelessCharge != null">
+				tasknum_wireless_charge,
+			</if>
+			<if test="tasknumRearview != null">
+				tasknum_rearview,
+			</if>
+			<if test="tasknumFunctionRearview != null">
+				tasknum_function_rearview,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="month != null">
+				#{month,jdbcType=VARCHAR},
+			</if>
+			<if test="area != null">
+				#{area,jdbcType=VARCHAR},
+			</if>
+			<if test="regionalManagerLeader != null">
+				#{regionalManagerLeader,jdbcType=VARCHAR},
+			</if>
+			<if test="regionalManager != null">
+				#{regionalManager,jdbcType=VARCHAR},
+			</if>
+			<if test="bizType != null">
+				#{bizType,jdbcType=VARCHAR},
+			</if>
+			<if test="spName != null">
+				#{spName,jdbcType=VARCHAR},
+			</if>
+			<if test="tasknumDvd != null">
+				#{tasknumDvd,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumGps != null">
+				#{tasknumGps,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumYunjing != null">
+				#{tasknumYunjing,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumDidihuService != null">
+				#{tasknumDidihuService,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumWirelessCharge != null">
+				#{tasknumWirelessCharge,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumRearview != null">
+				#{tasknumRearview,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumFunctionRearview != null">
+				#{tasknumFunctionRearview,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTask">
+		update tbl_sales_task
+		<set>
+			<if test="month != null">
+				month = #{month,jdbcType=VARCHAR},
+			</if>
+			<if test="area != null">
+				area = #{area,jdbcType=VARCHAR},
+			</if>
+			<if test="regionalManagerLeader != null">
+				regional_manager_leader =
+				#{regionalManagerLeader,jdbcType=VARCHAR},
+			</if>
+			<if test="regionalManager != null">
+				regional_manager = #{regionalManager,jdbcType=VARCHAR},
+			</if>
+			<if test="bizType != null">
+				biz_type = #{bizType,jdbcType=VARCHAR},
+			</if>
+			<if test="spName != null">
+				sp_name = #{spName,jdbcType=VARCHAR},
+			</if>
+			<if test="tasknumDvd != null">
+				tasknum_dvd = #{tasknumDvd,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumGps != null">
+				tasknum_gps = #{tasknumGps,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumYunjing != null">
+				tasknum_yunjing = #{tasknumYunjing,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumDidihuService != null">
+				tasknum_didihu_service =
+				#{tasknumDidihuService,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumWirelessCharge != null">
+				tasknum_wireless_charge =
+				#{tasknumWirelessCharge,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumRearview != null">
+				tasknum_rearview = #{tasknumRearview,jdbcType=INTEGER},
+			</if>
+			<if test="tasknumFunctionRearview != null">
+				tasknum_function_rearview =
+				#{tasknumFunctionRearview,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTask">
+		update tbl_sales_task
+		set month =
+		#{month,jdbcType=VARCHAR},
+		area = #{area,jdbcType=VARCHAR},
+		regional_manager_leader = #{regionalManagerLeader,jdbcType=VARCHAR},
+		regional_manager = #{regionalManager,jdbcType=VARCHAR},
+		biz_type =
+		#{bizType,jdbcType=VARCHAR},
+		sp_name = #{spName,jdbcType=VARCHAR},
+		tasknum_dvd = #{tasknumDvd,jdbcType=INTEGER},
+		tasknum_gps =
+		#{tasknumGps,jdbcType=INTEGER},
+		tasknum_yunjing =
+		#{tasknumYunjing,jdbcType=INTEGER},
+		tasknum_didihu_service =
+		#{tasknumDidihuService,jdbcType=INTEGER},
+		tasknum_wireless_charge =
+		#{tasknumWirelessCharge,jdbcType=INTEGER},
+		tasknum_rearview =
+		#{tasknumRearview,jdbcType=INTEGER},
+		tasknum_function_rearview =
+		#{tasknumFunctionRearview,jdbcType=INTEGER},
+		create_time =
+		#{createTime,jdbcType=TIMESTAMP},
+		update_time =
+		#{updateTime,jdbcType=TIMESTAMP}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+	<insert id="insertAllSalesTask" parameterType="java.util.List">
+		insert into tbl_sales_task
+		(month,area,regional_manager_leader,regional_manager,biz_type,sp_name,sp_code,
+		tasknum_dvd,tasknum_gps,tasknum_yunjing,tasknum_didihu_service,tasknum_wireless_charge,
+		tasknum_rearview,tasknum_function_rearview,create_time,update_time)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(DATE_FORMAT(NOW(),'%Y-%m'),#{item.area},#{item.regionalManagerLeader},#{item.regionalManager},
+			#{item.bizType},#{item.spName},#{item.spCode},#{item.tasknumDvd},#{item.tasknumGps},
+			#{item.tasknumYunjing},#{item.tasknumDidihuService},#{item.tasknumWirelessCharge},
+			#{item.tasknumRearview},#{item.tasknumFunctionRearview},NOW(),NOW())
+		</foreach>
+	</insert>
+
+	<select id="getSalesTaskList" parameterType="java.lang.String"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTask">
+		select id id,
+		month month,
+		area area,
+		regional_manager_leader
+		regionalManagerLeader,
+		regional_manager regionalManager,
+		biz_type
+		bizType,
+		sp_code spCode,
+		sp_name spName,
+		tasknum_dvd tasknumDvd,
+		tasknum_gps tasknumGps,
+		tasknum_yunjing tasknumYunjing,
+		tasknum_didihu_service tasknumDidihuService,
+		tasknum_wireless_charge
+		tasknumWirelessCharge,
+		tasknum_rearview tasknumRearview,
+		tasknum_function_rearview tasknumFunctionRearview,
+		create_time
+		createTime,
+		update_time updateTime
+		from tbl_sales_task
+		where
+		month=#{month}
+	</select>
+
+	<update id="updateSalesTask"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTaskCom">
+		update tbl_sales_task
+		set tasknum_dvd = #{tasknumDvd} ,
+		tasknum_gps = #{tasknumGps} ,
+		tasknum_yunjing = #{tasknumYunjing} ,
+		tasknum_didihu_service = #{tasknumDidihuService},
+		tasknum_wireless_charge = #{tasknumWirelessCharge} ,
+		tasknum_rearview = #{tasknumRearview},
+		tasknum_function_rearview = #{tasknumFunctionRearview}
+		where sp_code=#{spCode}
+		and month=#{month}
+	</update>
+
+	<select id="getCodeBySpName" parameterType="java.lang.String"
+		resultType="java.lang.String">
+		select
+		sp_code spCode
+		from tbl_sales_sp
+		where sp=#{sp}
+	</select>
+
+	<select id="getAllManagerLeader" parameterType="java.lang.String"
+		resultType="java.lang.String">
+		SELECT DISTINCT
+		(regional_manager_leader)
+		regionalManagerLeader
+		FROM
+		tbl_sales_task
+		where month=#{month}
+	</select>
+	<select id="getAllManager" parameterType="java.lang.String"
+		resultType="java.lang.String">
+		SELECT DISTINCT
+		(regional_manager) regionalManager
+		FROM
+		tbl_sales_task
+		where month=#{month}
+	</select>
+	<select id="getAllSpCode" parameterType="java.lang.String"
+		resultType="java.lang.String">
+		SELECT DISTINCT
+		(sp_code) spCode
+		FROM
+		tbl_sales_task
+		where month=#{month}
+	</select>
+
+	<select id="getManagerCode" resultType="com.glsx.oms.bigdata.admin.bma.salesTask.model.Manager">
+		SELECT
+		manager.manager_code managerCode,
+		manager.manager managerName
+		FROM
+		tbl_sales_manager manager
+	</select>
+
+	<select id="getDetailMessage" parameterType="java.util.Map"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTaskCom">
+
+		SELECT task.area area,
+		task.biz_type bizType,
+		task.sp_code spCode,
+		task.sp_name spName,
+		salesGlDvd,
+		salesGlGps,
+		salesYunjing,
+		salesDidihuService,
+		salesWirelessCharge,
+		salesRearview,
+		salesFunctionRearview,
+		task.tasknum_dvd tasknumDvd,
+		task.tasknum_gps tasknumGps,
+		task.tasknum_yunjing tasknumYunjing,
+		task.tasknum_didihu_service tasknumDidihuService,
+		task.tasknum_wireless_charge tasknumWirelessCharge,
+		task.tasknum_rearview tasknumRearview,
+		task.tasknum_function_rearview tasknumFunctionRearview
+		from (
+		select * from tbl_sales_task
+		where 1=1
+		<if test="month != null">
+			and MONTH =#{month}
+		</if>
+		<if test="spCodeList != null">
+			and sp_code in
+			<foreach collection="spCodeList" item="spCode" separator=","
+				open="(" close=")">
+				#{spCode}
+			</foreach>
+		</if>
+		) task
+		left join
+		(SELECT
+		sp_code spCode,
+		sum(sales_gl_dvd) salesGlDvd,
+		sum(sales_gl_gps) salesGlGps,
+		sum(sales_yunjing) salesYunjing,
+		sum(sales_didihu_service) salesDidihuService,
+		sum(sales_wireless_charge) salesWirelessCharge,
+		sum(sales_rearview) salesRearview,
+		sum(sales_function_rearview) salesFunctionRearview
+		FROM
+		tbl_sales_statement_monthly
+		where 1=1
+		<if test="month != null">
+			and MONTH =#{month}
+		</if>
+		<if test="spCodeList != null">
+			and sp_code in
+			<foreach collection="spCodeList" item="spCode" separator=","
+				open="(" close=")">
+				#{spCode}
+			</foreach>
+		</if>
+		)mon
+		on
+		mon.spCode = task.sp_code
+	</select>
+
+
+	<select id="getSpCodeList"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesTask.model.SalesTaskCom"
+		resultType="java.lang.String">
+		select DISTINCT
+		(sp_code) spCode
+		FROM
+		tbl_sales_task
+		WHERE 1 = 1
+		<if test="month != null">
+			and month=#{month}
+		</if>
+		<if test="regionalManagerLeader != null">
+			and regional_manager_leader=#{regionalManagerLeader}
+		</if>
+		<if test="regionalManager != null">
+			and regional_manager like '%${regionalManager}%'
+		</if>
+	</select>
+
+	<insert id="insertPublishStatus" parameterType="java.lang.String">
+		insert into
+		tbl_publish_status
+		(month,publish_status,create_time,update_time)
+		values(#{month},1,NOW(),NOW())
+		on DUPLICATE key UPDATE
+		publish_status = 1,update_time = NOW()
+	</insert>
+
+	<select id="selectPublishStatus" parameterType="java.lang.String"
+		resultType="java.lang.Integer">
+		select publish_status
+		from tbl_publish_status
+		where month =
+		#{month}
+	</select>
+
+	<delete id="deleteByMonth" parameterType="java.lang.String">
+		delete from
+		tbl_sales_task
+		where month = #{month}
+	</delete>
+</mapper>

@@ -1,0 +1,31 @@
+@import '~antd/lib/style/themes/default.less';
+
+.container {
+  display: flex;
+  /* 一行一行的排列 */
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+  background: @layout-body-background;
+}
+
+.content {
+  // padding: 32px;
+  flex: 1;
+  //text-align: center;
+  /* width: 600px; */
+}
+
+/* 可视区的宽度大于 @screen-md-min时应用*/
+@media (min-width: @screen-md-min) {
+  .container {
+    background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
+    background-repeat: no-repeat;
+    background-position: center 110px;
+    background-size: 100%;
+  }
+
+  .content {
+    padding: 112px 0 24px 0;
+  }
+}

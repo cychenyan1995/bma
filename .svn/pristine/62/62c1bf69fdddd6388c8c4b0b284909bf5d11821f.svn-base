@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><link rel="stylesheet" href="/gldb-admin-bma/umi.css"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>&#x9500;&#x552E;&#x4E1A;&#x52A1;&#x5E73;&#x53F0;</title><link rel="icon" href="/favicon.png" type="image/x-icon"><script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&amp;ak=plBVS5NFIuGZMG1263SFvOdWWIFG49f2"></script><script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script><script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js"></script><script>window.routerBase = "/";</script></head><body><div id="root"></div><script src="/gldb-admin-bma/umi.js"></script><script>(function(){ 
+        if (!location.port) {
+          (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+              }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+              m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+          })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+          ga('create', 'UA-72788897-6', 'auto');
+          ga('send', 'pageview');
+        }
+      })();</script></body></html>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.glsx.oms.bigdata</groupId>
+	<artifactId>gldb-admin-bma</artifactId>
+	<!-- 商户经营分析平台 bussiness manage ayalysis -->
+	<version>1.0.0.RELEASE</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<!-- Third Party versions -->
+		<org.oreframework.boot.version>1.0.10-SNAPSHOT</org.oreframework.boot.version>
+
+		<!-- Plugin versions -->
+		<maven.version>3.1.1</maven.version>
+		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+
+		<!-- System properties -->
+		<java.version>1.8</java.version>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<cloudframework.version>2.1.3-SNAPSHOT</cloudframework.version>
+
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<!-- Import dependency management from Ore Boot -->
+				<groupId>org.oreframework.boot</groupId>
+				<artifactId>ore-boot-dependencies</artifactId>
+				<version>${org.oreframework.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- Add typical dependencies for a web application -->
+	<dependencies>
+		<dependency>
+			<groupId>org.oreframework.boot</groupId>
+			<artifactId>ore-boot-starter-diamond</artifactId>
+			<version>${org.oreframework.boot.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.oreframework.boot</groupId>
+			<artifactId>ore-boot-starter-datasource</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.oreframework.boot</groupId>
+			<artifactId>ore-boot-starter-office</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>Ice</groupId>
+			<artifactId>Ice</artifactId>
+			<version>3.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId> cn.com.glsx </groupId>
+			<artifactId> rpc-club-wechat-api </artifactId>
+			<version> 0.0.1-SNAPSHOT </version>
+		</dependency>
+		<dependency>
+			<groupId>cn.com.glsx</groupId>
+			<artifactId>rpc-club-user-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.oreframework.boot</groupId>
+			<artifactId>ore-boot-starter-dubbo</artifactId>
+		</dependency>
+		<!-- 单点登录 -->
+		<dependency>
+			<groupId>org.oreframework.boot</groupId>
+			<artifactId>ore-boot-starter-cas</artifactId>
+		</dependency>
+		
+	</dependencies>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

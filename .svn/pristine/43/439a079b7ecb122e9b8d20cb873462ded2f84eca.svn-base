@@ -1,0 +1,29 @@
+import dva from 'dva';
+import createLoading from 'dva-loading';
+
+const runtimeDva = window.g_plugins.mergeConfig('dva');
+let app = dva({
+  history: window.g_history,
+  
+  ...(runtimeDva.config || {}),
+});
+
+window.g_app = app;
+app.use(createLoading());
+(runtimeDva.plugins || []).forEach(plugin => {
+  app.use(plugin);
+});
+
+app.model({ namespace: 'global', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/models/global.js').default) });
+app.model({ namespace: 'list', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/models/list.js').default) });
+app.model({ namespace: 'login', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/models/login.js').default) });
+app.model({ namespace: 'project', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/models/project.js').default) });
+app.model({ namespace: 'setting', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/models/setting.js').default) });
+app.model({ namespace: 'user', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/models/user.js').default) });
+app.model({ namespace: 'salesTask', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/pages/salesTask/models/salesTask.js').default) });
+app.model({ namespace: 'detail', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/pages/salesHistory/models/detail.js').default) });
+app.model({ namespace: 'form', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/pages/salesHistory/models/form.js').default) });
+app.model({ namespace: 'index', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/pages/salesHistory/models/index.js').default) });
+app.model({ namespace: 'table', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/pages/salesHistory/models/table.js').default) });
+app.model({ namespace: 'detail', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/pages/detail/models/detail.js').default) });
+app.model({ namespace: 'index', ...(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/pages/sendMessage/models/index.js').default) });

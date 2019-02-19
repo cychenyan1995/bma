@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+	<property resource="config/application.properties" />
+	<property name="APP_NAME" value="${server.display-name}" />
+	<property name="LOG_PATH" value="${logging.path}" />
+	<contextName>${APP_NAME}</contextName>
+	
+	<turboFilter class="org.oreframework.boot.logging.logback.OreBootTurboFilter">
+		<Marker>oreframework</Marker>
+	</turboFilter>
+	
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>
+				<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [${APP_NAME}] [%thread] %-5level %logger{36} - %msg%n</pattern>
+			</pattern>
+		</layout>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- <Encoding> Label Old version of this label can not be used -->
+		<!-- <Encoding>UTF-8</Encoding> -->
+		<File>${LOG_PATH}</File>
+		<!-- <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
+			<FileNamePattern>${LOG_PATH}.%d{yyyy-MM-dd}.%i</FileNamePattern>
+			<MaxHistory>15</MaxHistory>
+			<maxFileSize>200MB</maxFileSize>  
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} ${APP_NAME}] [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</layout>
+		<!-- 根据文件大小滚动，不支持 SizeBasedTriggeringPolicy 这种配置-->
+		<!-- <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>200MB</MaxFileSize>
+        </triggeringPolicy> -->
+	</appender>
+
+	<root level="INFO"> 
+        <appender-ref ref="STDOUT" />  
+        <appender-ref ref="FILE" />   
+	</root>
+</configuration>  

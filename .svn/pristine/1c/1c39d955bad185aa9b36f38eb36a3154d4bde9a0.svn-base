@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.glsx.oms.bigdata.admin.bma.salesHistory.mapper.SalesHistoryMapper">
+	<resultMap id="BaseResultMap"
+		type="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="month" jdbcType="VARCHAR" property="month" />
+		<result column="month_region" jdbcType="VARCHAR" property="monthRegion" />
+		<result column="area" jdbcType="VARCHAR" property="area" />
+		<result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+		<result column="sp_code" jdbcType="VARCHAR" property="spCode" />
+		<result column="sp_name" jdbcType="VARCHAR" property="spName" />
+		<result column="shop_code" jdbcType="VARCHAR" property="shopCode" />
+		<result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+		<result column="sales_car" jdbcType="INTEGER" property="salesCar" />
+		<result column="sales_dvd" jdbcType="INTEGER" property="salesDvd" />
+		<result column="sales_gps" jdbcType="INTEGER" property="salesGps" />
+		<result column="sales_gl_dvd" jdbcType="INTEGER" property="salesGlDvd" />
+		<result column="sales_gl_gps" jdbcType="INTEGER" property="salesGlGps" />
+		<result column="sales_yunjing" jdbcType="INTEGER" property="salesYunjing" />
+		<result column="sales_didihu_service" jdbcType="INTEGER"
+			property="salesDidihuService" />
+		<result column="sales_wireless_charge" jdbcType="INTEGER"
+			property="salesWirelessCharge" />
+		<result column="sales_rearview" jdbcType="INTEGER" property="salesRearview" />
+		<result column="sales_function_rearview" jdbcType="INTEGER"
+			property="salesFunctionRearview" />
+		<result column="sales_gl_total" jdbcType="INTEGER" property="salesGlTotal" />
+		<result column="sales_dvd_inter_largescreen" jdbcType="INTEGER"
+			property="salesDvdInterLargescreen" />
+		<result column="sales_dvd_inter_originalscreen" jdbcType="INTEGER"
+			property="salesDvdInterOriginalscreen" />
+		<result column="sales_screen_change" jdbcType="INTEGER"
+			property="salesScreenChange" />
+		<result column="sales_reflection_upgrade" jdbcType="INTEGER"
+			property="salesReflectionUpgrade" />
+		<result column="sales_big_screen_promotion" jdbcType="INTEGER"
+			property="salesBigScreenPromotion" />
+		<result column="total_chain_ratio" jdbcType="REAL" property="totalChainRatio" />
+		<result column="gl_dvd_chain_ratio" jdbcType="REAL" property="glDvdChainRatio" />
+		<result column="gl_gps_chain_ratio" jdbcType="REAL" property="glGpsChainRatio" />
+		<result column="yunjing_chain_ratio" jdbcType="REAL"
+			property="yunjingChainRatio" />
+		<result column="didihu_service_chain_ratio" jdbcType="REAL"
+			property="didihuServiceChainRatio" />
+		<result column="wireless_charge_chain_ratio" jdbcType="REAL"
+			property="wirelessChargeChainRatio" />
+		<result column="rearview_chain_ratio" jdbcType="REAL"
+			property="rearviewChainRatio" />
+		<result column="fun_rearview_chain_ratio" jdbcType="REAL"
+			property="funRearviewChainRatio" />
+		<result column="ratio_install_gl_dvd" jdbcType="REAL"
+			property="ratioInstallGlDvd" />
+		<result column="ratio_gl_dvd" jdbcType="REAL" property="ratioGlDvd" />
+		<result column="ratio_gl_gps" jdbcType="REAL" property="ratioGlGps" />
+		<result column="cost_dvd" jdbcType="REAL" property="costDvd" />
+		<result column="cost_gps" jdbcType="REAL" property="costGps" />
+		<result column="cost_yunjing" jdbcType="REAL" property="costYunjing" />
+		<result column="cost_didihu_service" jdbcType="REAL"
+			property="costDidihuService" />
+		<result column="cost_wireless_charge" jdbcType="REAL"
+			property="costWirelessCharge" />
+		<result column="cost_rearview" jdbcType="REAL" property="costRearview" />
+		<result column="cost_function_rearview" jdbcType="REAL"
+			property="costFunctionRearview" />
+		<result column="cost_total" jdbcType="REAL" property="costTotal" />
+		<result column="cost_dvd_inter_largescreen" jdbcType="REAL"
+			property="costDvdInterLargescreen" />
+		<result column="cost_dvd_inter_originalscreen" jdbcType="REAL"
+			property="costDvdInterOriginalscreen" />
+		<result column="cost_screen_change" jdbcType="REAL" property="costScreenChange" />
+		<result column="cost_reflection_upgrade" jdbcType="REAL"
+			property="costReflectionUpgrade" />
+		<result column="cost_big_screen_promotion" jdbcType="REAL"
+			property="costBigScreenPromotion" />
+		<result column="total_deliver" jdbcType="INTEGER" property="totalDeliver" />
+		<result column="total_sales" jdbcType="INTEGER" property="totalSales" />
+		<result column="total_inventory" jdbcType="INTEGER" property="totalInventory" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, month, month_region, area, biz_type, sp_code, sp_name,
+		shop_code,
+		shop_name,
+		sales_car, sales_dvd, sales_gps, sales_gl_dvd,
+		sales_gl_gps, sales_yunjing,
+		sales_didihu_service,
+		sales_wireless_charge, sales_rearview, sales_function_rearview,
+		sales_gl_total,
+		sales_dvd_inter_largescreen,
+		sales_dvd_inter_originalscreen, sales_screen_change,
+		sales_reflection_upgrade,
+		sales_big_screen_promotion,
+		total_chain_ratio, gl_dvd_chain_ratio, gl_gps_chain_ratio,
+		yunjing_chain_ratio,
+		didihu_service_chain_ratio,
+		wireless_charge_chain_ratio, rearview_chain_ratio,
+		fun_rearview_chain_ratio, ratio_install_gl_dvd,
+		ratio_gl_dvd,
+		ratio_gl_gps, cost_dvd, cost_gps, cost_yunjing,
+		cost_didihu_service,
+		cost_wireless_charge, cost_rearview, cost_function_rearview,
+		cost_total,
+		cost_dvd_inter_largescreen,
+		cost_dvd_inter_originalscreen,
+		cost_screen_change, cost_reflection_upgrade,
+		cost_big_screen_promotion,
+		total_deliver, total_sales, total_inventory,
+		create_time, update_time
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from tbl_sales_statement_monthly
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		update tbl_sales_statement_monthly
+		<set>
+			<if test="month != null">
+				month = #{month,jdbcType=VARCHAR},
+			</if>
+			<if test="monthRegion != null">
+				month_region = #{monthRegion,jdbcType=VARCHAR},
+			</if>
+			<if test="area != null">
+				area = #{area,jdbcType=VARCHAR},
+			</if>
+			<if test="bizType != null">
+				biz_type = #{bizType,jdbcType=VARCHAR},
+			</if>
+			<if test="spCode != null">
+				sp_code = #{spCode,jdbcType=VARCHAR},
+			</if>
+			<if test="spName != null">
+				sp_name = #{spName,jdbcType=VARCHAR},
+			</if>
+			<if test="shopCode != null">
+				shop_code = #{shopCode,jdbcType=VARCHAR},
+			</if>
+			<if test="shopName != null">
+				shop_name = #{shopName,jdbcType=VARCHAR},
+			</if>
+			<if test="salesCar != null">
+				sales_car = #{salesCar,jdbcType=INTEGER},
+			</if>
+			<if test="salesDvd != null">
+				sales_dvd = #{salesDvd,jdbcType=INTEGER},
+			</if>
+			<if test="salesGps != null">
+				sales_gps = #{salesGps,jdbcType=INTEGER},
+			</if>
+			<if test="salesGlDvd != null">
+				sales_gl_dvd = #{salesGlDvd,jdbcType=INTEGER},
+			</if>
+			<if test="salesGlGps != null">
+				sales_gl_gps = #{salesGlGps,jdbcType=INTEGER},
+			</if>
+			<if test="salesYunjing != null">
+				sales_yunjing = #{salesYunjing,jdbcType=INTEGER},
+			</if>
+			<if test="salesDidihuService != null">
+				sales_didihu_service =
+				#{salesDidihuService,jdbcType=INTEGER},
+			</if>
+			<if test="salesWirelessCharge != null">
+				sales_wireless_charge =
+				#{salesWirelessCharge,jdbcType=INTEGER},
+			</if>
+			<if test="salesRearview != null">
+				sales_rearview = #{salesRearview,jdbcType=INTEGER},
+			</if>
+			<if test="salesFunctionRearview != null">
+				sales_function_rearview =
+				#{salesFunctionRearview,jdbcType=INTEGER},
+			</if>
+			<if test="salesGlTotal != null">
+				sales_gl_total = #{salesGlTotal,jdbcType=INTEGER},
+			</if>
+			<if test="salesDvdInterLargescreen != null">
+				sales_dvd_inter_largescreen =
+				#{salesDvdInterLargescreen,jdbcType=INTEGER},
+			</if>
+			<if test="salesDvdInterOriginalscreen != null">
+				sales_dvd_inter_originalscreen =
+				#{salesDvdInterOriginalscreen,jdbcType=INTEGER},
+			</if>
+			<if test="salesScreenChange != null">
+				sales_screen_change =
+				#{salesScreenChange,jdbcType=INTEGER},
+			</if>
+			<if test="salesReflectionUpgrade != null">
+				sales_reflection_upgrade =
+				#{salesReflectionUpgrade,jdbcType=INTEGER},
+			</if>
+			<if test="salesBigScreenPromotion != null">
+				sales_big_screen_promotion =
+				#{salesBigScreenPromotion,jdbcType=INTEGER},
+			</if>
+			<if test="totalChainRatio != null">
+				total_chain_ratio = #{totalChainRatio,jdbcType=REAL},
+			</if>
+			<if test="glDvdChainRatio != null">
+				gl_dvd_chain_ratio = #{glDvdChainRatio,jdbcType=REAL},
+			</if>
+			<if test="glGpsChainRatio != null">
+				gl_gps_chain_ratio = #{glGpsChainRatio,jdbcType=REAL},
+			</if>
+			<if test="yunjingChainRatio != null">
+				yunjing_chain_ratio = #{yunjingChainRatio,jdbcType=REAL},
+			</if>
+			<if test="didihuServiceChainRatio != null">
+				didihu_service_chain_ratio =
+				#{didihuServiceChainRatio,jdbcType=REAL},
+			</if>
+			<if test="wirelessChargeChainRatio != null">
+				wireless_charge_chain_ratio =
+				#{wirelessChargeChainRatio,jdbcType=REAL},
+			</if>
+			<if test="rearviewChainRatio != null">
+				rearview_chain_ratio =
+				#{rearviewChainRatio,jdbcType=REAL},
+			</if>
+			<if test="funRearviewChainRatio != null">
+				fun_rearview_chain_ratio =
+				#{funRearviewChainRatio,jdbcType=REAL},
+			</if>
+			<if test="ratioInstallGlDvd != null">
+				ratio_install_gl_dvd =
+				#{ratioInstallGlDvd,jdbcType=REAL},
+			</if>
+			<if test="ratioGlDvd != null">
+				ratio_gl_dvd = #{ratioGlDvd,jdbcType=REAL},
+			</if>
+			<if test="ratioGlGps != null">
+				ratio_gl_gps = #{ratioGlGps,jdbcType=REAL},
+			</if>
+			<if test="costDvd != null">
+				cost_dvd = #{costDvd,jdbcType=REAL},
+			</if>
+			<if test="costGps != null">
+				cost_gps = #{costGps,jdbcType=REAL},
+			</if>
+			<if test="costYunjing != null">
+				cost_yunjing = #{costYunjing,jdbcType=REAL},
+			</if>
+			<if test="costDidihuService != null">
+				cost_didihu_service = #{costDidihuService,jdbcType=REAL},
+			</if>
+			<if test="costWirelessCharge != null">
+				cost_wireless_charge =
+				#{costWirelessCharge,jdbcType=REAL},
+			</if>
+			<if test="costRearview != null">
+				cost_rearview = #{costRearview,jdbcType=REAL},
+			</if>
+			<if test="costFunctionRearview != null">
+				cost_function_rearview =
+				#{costFunctionRearview,jdbcType=REAL},
+			</if>
+			<if test="costTotal != null">
+				cost_total = #{costTotal,jdbcType=REAL},
+			</if>
+			<if test="costDvdInterLargescreen != null">
+				cost_dvd_inter_largescreen =
+				#{costDvdInterLargescreen,jdbcType=REAL},
+			</if>
+			<if test="costDvdInterOriginalscreen != null">
+				cost_dvd_inter_originalscreen =
+				#{costDvdInterOriginalscreen,jdbcType=REAL},
+			</if>
+			<if test="costScreenChange != null">
+				cost_screen_change = #{costScreenChange,jdbcType=REAL},
+			</if>
+			<if test="costReflectionUpgrade != null">
+				cost_reflection_upgrade =
+				#{costReflectionUpgrade,jdbcType=REAL},
+			</if>
+			<if test="costBigScreenPromotion != null">
+				cost_big_screen_promotion =
+				#{costBigScreenPromotion,jdbcType=REAL},
+			</if>
+			<if test="totalDeliver != null">
+				total_deliver = #{totalDeliver,jdbcType=INTEGER},
+			</if>
+			<if test="totalSales != null">
+				total_sales = #{totalSales,jdbcType=INTEGER},
+			</if>
+			<if test="totalInventory != null">
+				total_inventory = #{totalInventory,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		update tbl_sales_statement_monthly
+		set month =
+		#{month,jdbcType=VARCHAR},
+		month_region =
+		#{monthRegion,jdbcType=VARCHAR},
+		area = #{area,jdbcType=VARCHAR},
+		biz_type = #{bizType,jdbcType=VARCHAR},
+		sp_code =
+		#{spCode,jdbcType=VARCHAR},
+		sp_name = #{spName,jdbcType=VARCHAR},
+		shop_code = #{shopCode,jdbcType=VARCHAR},
+		shop_name =
+		#{shopName,jdbcType=VARCHAR},
+		sales_car = #{salesCar,jdbcType=INTEGER},
+		sales_dvd = #{salesDvd,jdbcType=INTEGER},
+		sales_gps =
+		#{salesGps,jdbcType=INTEGER},
+		sales_gl_dvd =
+		#{salesGlDvd,jdbcType=INTEGER},
+		sales_gl_gps =
+		#{salesGlGps,jdbcType=INTEGER},
+		sales_yunjing =
+		#{salesYunjing,jdbcType=INTEGER},
+		sales_didihu_service =
+		#{salesDidihuService,jdbcType=INTEGER},
+		sales_wireless_charge =
+		#{salesWirelessCharge,jdbcType=INTEGER},
+		sales_rearview =
+		#{salesRearview,jdbcType=INTEGER},
+		sales_function_rearview =
+		#{salesFunctionRearview,jdbcType=INTEGER},
+		sales_gl_total =
+		#{salesGlTotal,jdbcType=INTEGER},
+		sales_dvd_inter_largescreen =
+		#{salesDvdInterLargescreen,jdbcType=INTEGER},
+		sales_dvd_inter_originalscreen =
+		#{salesDvdInterOriginalscreen,jdbcType=INTEGER},
+		sales_screen_change =
+		#{salesScreenChange,jdbcType=INTEGER},
+		sales_reflection_upgrade =
+		#{salesReflectionUpgrade,jdbcType=INTEGER},
+		sales_big_screen_promotion
+		=
+		#{salesBigScreenPromotion,jdbcType=INTEGER},
+		total_chain_ratio =
+		#{totalChainRatio,jdbcType=REAL},
+		gl_dvd_chain_ratio =
+		#{glDvdChainRatio,jdbcType=REAL},
+		gl_gps_chain_ratio =
+		#{glGpsChainRatio,jdbcType=REAL},
+		yunjing_chain_ratio =
+		#{yunjingChainRatio,jdbcType=REAL},
+		didihu_service_chain_ratio =
+		#{didihuServiceChainRatio,jdbcType=REAL},
+		wireless_charge_chain_ratio =
+		#{wirelessChargeChainRatio,jdbcType=REAL},
+		rearview_chain_ratio =
+		#{rearviewChainRatio,jdbcType=REAL},
+		fun_rearview_chain_ratio =
+		#{funRearviewChainRatio,jdbcType=REAL},
+		ratio_install_gl_dvd =
+		#{ratioInstallGlDvd,jdbcType=REAL},
+		ratio_gl_dvd =
+		#{ratioGlDvd,jdbcType=REAL},
+		ratio_gl_gps =
+		#{ratioGlGps,jdbcType=REAL},
+		cost_dvd = #{costDvd,jdbcType=REAL},
+		cost_gps = #{costGps,jdbcType=REAL},
+		cost_yunjing =
+		#{costYunjing,jdbcType=REAL},
+		cost_didihu_service =
+		#{costDidihuService,jdbcType=REAL},
+		cost_wireless_charge =
+		#{costWirelessCharge,jdbcType=REAL},
+		cost_rearview =
+		#{costRearview,jdbcType=REAL},
+		cost_function_rearview =
+		#{costFunctionRearview,jdbcType=REAL},
+		cost_total =
+		#{costTotal,jdbcType=REAL},
+		cost_dvd_inter_largescreen =
+		#{costDvdInterLargescreen,jdbcType=REAL},
+		cost_dvd_inter_originalscreen =
+		#{costDvdInterOriginalscreen,jdbcType=REAL},
+		cost_screen_change =
+		#{costScreenChange,jdbcType=REAL},
+		cost_reflection_upgrade =
+		#{costReflectionUpgrade,jdbcType=REAL},
+		cost_big_screen_promotion =
+		#{costBigScreenPromotion,jdbcType=REAL},
+		total_deliver =
+		#{totalDeliver,jdbcType=INTEGER},
+		total_sales =
+		#{totalSales,jdbcType=INTEGER},
+		total_inventory =
+		#{totalInventory,jdbcType=INTEGER},
+		create_time =
+		#{createTime,jdbcType=TIMESTAMP},
+		update_time =
+		#{updateTime,jdbcType=TIMESTAMP}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="selectAllSalesHistory"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		SELECT id id,
+		month month,
+		area area,
+		biz_type bizType,
+		sp_code spCode,
+		sp_name spName,
+		sales_gl_dvd salesGlDvd,
+		sales_gl_gps salesGlGps,
+		sales_yunjing salesYunjing,
+		sales_didihu_service salesDidihuService,
+		sales_wireless_charge salesWirelessCharge,
+		sales_rearview
+		salesRearview,
+		sales_function_rearview salesFunctionRearview
+		FROM
+		tbl_sales_statement_monthly
+		WHERE 1 = 1
+		<if test="month != null">
+			and month=#{month}
+		</if>
+		<if test="spCode != null and spCode != ''">
+			and sp_code=#{spCode}
+		</if>
+		<if test="spName != null and spName != ''">
+			and sp_name=#{spName}
+		</if>
+	</select>
+
+	<select id="selectSpSalesHistory"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		SELECT 
+		t.id id,
+		m.month month,
+		t.month tmonth,
+		t.area area,
+		t.biz_type bizType,
+		t.regional_manager_leader regionalManagerLeader,
+		t.regional_manager regionalManager,
+		t.sp_code spCode,
+		t.sp_name spName,
+		t.tasknum_dvd tasknumDvd,
+		sum(m.sales_gl_dvd) salesGlDvd,
+		ifnull(CONCAT(CAST(round((sum(m.sales_gl_dvd)/t.tasknum_dvd)*100,2) AS CHAR),'%'),'0.00%') salesGlDvdRate,
+		t.tasknum_gps tasknumGps,
+		sum(m.sales_gl_gps) salesGlGps,
+		ifnull(CONCAT(CAST(round((sum(m.sales_gl_gps)/t.tasknum_gps)*100,2) AS CHAR),'%'),'0.00%') salesGlGpsRate,
+		t.tasknum_yunjing tasknumYunjing,
+		sum(m.sales_yunjing) salesYunjing,
+		ifnull(CONCAT(CAST(round((sum(m.sales_yunjing)/t.tasknum_yunjing)*100,2) AS
+		CHAR),'%'),'0.00%') salesYunjingRate,
+		t.tasknum_didihu_service tasknumDidihuService,
+		sum(m.sales_didihu_service) salesDidihuService,
+		ifnull(CONCAT(CAST(round((sum(m.sales_didihu_service)/t.tasknum_didihu_service)*100,2)
+		AS CHAR),'%'),'0.00%') salesDidihuServiceRate,
+		t.tasknum_wireless_charge tasknumWirelessCharge,
+		sum(m.sales_wireless_charge) salesWirelessCharge,
+		ifnull(CONCAT(CAST(round((sum(m.sales_wireless_charge)/t.tasknum_wireless_charge)*100,2)
+		AS CHAR),'%'),'0.00%') salesWirelessChargeRate,
+		t.tasknum_rearview tasknumRearview,
+		sum(m.sales_rearview) salesRearview,
+		ifnull(CONCAT(CAST(round((sum(m.sales_rearview)/t.tasknum_rearview)*100,2) AS
+		CHAR),'%'),'0.00%') salesRearviewRate,
+		t.tasknum_function_rearview tasknumFunctionRearview,
+		sum(m.sales_function_rearview) salesFunctionRearview,
+		ifnull(CONCAT(CAST(round((sum(m.sales_function_rearview)/t.tasknum_function_rearview)*100,2)
+		AS CHAR),'%'),'0.00%') salesFunctionRearviewRate
+		FROM
+		tbl_sales_task t
+		LEFT JOIN
+		tbl_sales_statement_monthly m
+		ON t.sp_code = m.sp_code AND t.month = m.month AND t.area = m.area
+		WHERE m.month IS NOT NULL AND (m.month != '')
+		<if test="tmonth != null">
+			and t.month=#{tmonth}
+		</if>
+		<if test="spCode != null and spCode != ''">
+			and t.sp_code=#{spCode}
+		</if>
+		<if test="spName != null and spName != ''">
+			and t.sp_name like '%${spName}%'
+		</if>
+		<if test="area != null and area != ''">
+			and t.area=#{area}
+		</if>
+		<if test="bizType != null and bizType != ''">
+			and t.biz_type=#{bizType}
+		</if>
+		<if test="regionalManagerLeader != null and regionalManagerLeader != ''">
+			and t.regional_manager_leader like '%${regionalManagerLeader}%'
+		</if>
+		<if test="regionalManager != null and regionalManager != ''">
+			and t.regional_manager like '%${regionalManager}%'
+		</if>
+		GROUP BY t.sp_code,t.month,t.area
+		ORDER BY t.sp_code
+	</select>
+
+	<select id="selectSpSalesHistoryByMonth"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		SELECT m.id id,
+		m.month month,
+		t.month tmonth,
+		m.area area,
+		m.biz_type
+		bizType,
+		t.regional_manager_leader regionalManagerLeader,
+		t.regional_manager regionalManager,
+		m.sp_code spCode,
+		m.sp_name spName,
+		t.tasknum_dvd tasknumDvd,
+		sum(m.sales_gl_dvd) salesGlDvd,
+		ifnull(CONCAT(CAST(round((sum(m.sales_gl_dvd)/t.tasknum_dvd)*100,2) AS
+		CHAR),'%'),'0.00%') salesGlDvdRate,
+		t.tasknum_gps tasknumGps,
+		sum(m.sales_gl_gps) salesGlGps,
+		ifnull(CONCAT(CAST(round((sum(m.sales_gl_gps)/t.tasknum_gps)*100,2) AS
+		CHAR),'%'),'0.00%') salesGlGpsRate,
+		t.tasknum_yunjing tasknumYunjing,
+		sum(m.sales_yunjing) salesYunjing,
+		ifnull(CONCAT(CAST(round((sum(m.sales_yunjing)/t.tasknum_yunjing)*100,2) AS
+		CHAR),'%'),'0.00%') salesYunjingRate,
+		t.tasknum_didihu_service
+		tasknumDidihuService,
+		sum(m.sales_didihu_service) salesDidihuService,
+		ifnull(CONCAT(CAST(round((sum(m.sales_didihu_service)/t.tasknum_didihu_service)*100,2)
+		AS CHAR),'%'),'0.00%') salesDidihuServiceRate,
+		t.tasknum_wireless_charge
+		tasknumWirelessCharge,
+		sum(m.sales_wireless_charge)
+		salesWirelessCharge,
+		ifnull(CONCAT(CAST(round((sum(m.sales_wireless_charge)/t.tasknum_wireless_charge)*100,2)
+		AS CHAR),'%'),'0.00%') salesWirelessChargeRate,
+		t.tasknum_rearview
+		tasknumRearview,
+		sum(m.sales_rearview) salesRearview,
+		ifnull(CONCAT(CAST(round((sum(m.sales_rearview)/t.tasknum_rearview)*100,2) AS
+		CHAR),'%'),'0.00%') salesRearviewRate,
+		t.tasknum_function_rearview
+		tasknumFunctionRearview,
+		sum(m.sales_function_rearview)
+		salesFunctionRearview,
+		ifnull(CONCAT(CAST(round((sum(m.sales_function_rearview)/t.tasknum_function_rearview)*100,2)
+		AS CHAR),'%'),'0.00%') salesFunctionRearviewRate
+		FROM
+		tbl_sales_statement_monthly m
+		LEFT JOIN tbl_sales_task t ON m.sp_code =
+		t.sp_code AND m.month = t.month
+		WHERE m.month IS NOT NULL AND (m.month
+		!= '')
+		<if test="month != null">
+			and m.month=#{month}
+		</if>
+		GROUP BY m.sp_code,m.month
+	</select>
+
+	<select id="selectByArea"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultMap="BaseResultMap">
+		SELECT DISTINCT(area) area
+		FROM tbl_sales_statement_monthly
+		WHERE area IS NOT NULL AND (area != '')
+	</select>
+
+	<select id="selectByLeader"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultMap="BaseResultMap">
+		SELECT DISTINCT(regional_manager_leader)
+		regionalManagerLeader
+		FROM tbl_sales_task
+		WHERE (regional_manager_leader
+		IS NOT NULL) AND (regional_manager_leader !=
+		'')
+	</select>
+
+	<select id="selectSumSalesByMonth"
+	    parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		SELECT
+		m.month month,
+		t.month tmonth,
+		t.area area,
+		t.biz_type bizType,
+		sum(m.sales_gl_dvd) salesGlDvd,
+		sum(m.sales_gl_gps) salesGlGps,
+		sum(m.sales_yunjing) salesYunjing,
+		sum(m.sales_didihu_service) salesDidihuService,
+		sum(m.sales_wireless_charge) salesWirelessCharge,
+		sum(m.sales_rearview) salesRearview,
+		sum(m.sales_function_rearview) salesFunctionRearview
+		FROM
+		tbl_sales_statement_monthly m
+		LEFT JOIN tbl_sales_task t ON m.sp_code =
+		t.sp_code AND m.month = t.month
+		WHERE m.month IS NOT NULL AND (m.month != '')
+		
+		<if test="spName != null and spName != ''">
+			and m.sp_name like '%${spName}%'
+		</if>
+		<if test="area != null and area != ''">
+			and m.area=#{area}
+		</if>
+		<if test="bizType != null and bizType != ''">
+			and m.biz_type=#{bizType}
+		</if>
+		<if test="regionalManagerLeader != null and regionalManagerLeader != ''">
+			and t.regional_manager_leader like '%${regionalManagerLeader}%'
+		</if>
+		<if test="regionalManager != null and regionalManager != ''">
+			and t.regional_manager like '%${regionalManager}%'
+		</if>
+		GROUP BY m.month
+	</select>
+
+	<select id="selectSumTaskByMonth"
+	    parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		SELECT
+		t.month month,
+		sum(t.tasknum_dvd) tasknumDvd,
+		sum(t.tasknum_gps) tasknumGps,
+		sum(t.tasknum_yunjing) tasknumYunjing,
+		sum(t.tasknum_didihu_service) tasknumDidihuService,
+		sum(t.tasknum_wireless_charge) tasknumWirelessCharge,
+		sum(t.tasknum_rearview) tasknumRearview,
+		sum(t.tasknum_function_rearview) tasknumFunctionRearview
+		FROM
+		tbl_sales_task t
+		WHERE t.month IS NOT NULL AND (t.month != '')
+		<if test="spName != null and spName != ''">
+			and t.sp_name like '%${spName}%'
+		</if>
+		<if test="area != null and area != ''">
+			and t.area=#{area}
+		</if>
+		<if test="bizType != null and bizType != ''">
+			and t.biz_type=#{bizType}
+		</if>
+		<if test="regionalManagerLeader != null and regionalManagerLeader != ''">
+			and t.regional_manager_leader like '%${regionalManagerLeader}%'
+		</if>
+		<if test="regionalManager != null and regionalManager != ''">
+			and t.regional_manager like '%${regionalManager}%'
+		</if>
+		GROUP BY t.month
+	</select>
+
+	<select id="selectSalesBySp"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		SELECT
+		m.month month,
+		m.sp_code spCode,
+		m.area area,
+		sum(m.sales_gl_dvd) salesGlDvd,
+		sum(m.sales_gl_gps) salesGlGps,
+		sum(m.sales_yunjing) salesYunjing,
+		sum(m.sales_didihu_service) salesDidihuService,
+		sum(m.sales_wireless_charge) salesWirelessCharge,
+		sum(m.sales_rearview) salesRearview,
+		sum(m.sales_function_rearview)
+		salesFunctionRearview
+		FROM tbl_sales_statement_monthly m
+		WHERE m.month
+		IS NOT NULL AND (m.month != '')
+		<if test="spCode != null and spCode != ''">
+			and m.sp_code=#{spCode}
+		</if>
+		<if test="area != null and area != ''">
+			and m.area=#{area}
+		</if>
+		GROUP BY m.month
+	</select>
+
+	<select id="selectTasksBySp"
+		parameterType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory"
+		resultType="com.glsx.oms.bigdata.admin.bma.salesHistory.model.SalesHistory">
+		SELECT
+		t.month month,
+		t.sp_code spCode,
+		t.area area,
+		t.regional_manager_leader regionalManagerLeader,
+		t.regional_manager regionalManager,
+		sum(t.tasknum_dvd) tasknumDvd,
+		sum(t.tasknum_gps) tasknumGps,
+		sum(t.tasknum_yunjing) tasknumYunjing,
+		sum(t.tasknum_didihu_service) tasknumDidihuService,
+		sum(t.tasknum_wireless_charge) tasknumWirelessCharge,
+		sum(t.tasknum_rearview) tasknumRearview,
+		sum(t.tasknum_function_rearview) tasknumFunctionRearview
+		FROM
+		tbl_sales_task t
+		WHERE t.month IS NOT NULL AND (t.month != '')
+		<if test="spCode != null and spCode != ''">
+			and t.sp_code=#{spCode}
+		</if>
+		<if test="area != null and area != ''">
+			and t.area=#{area}
+		</if>
+		GROUP BY t.month
+	</select>
+
+</mapper>

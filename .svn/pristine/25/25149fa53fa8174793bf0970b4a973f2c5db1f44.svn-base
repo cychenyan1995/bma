@@ -1,0 +1,78 @@
+import React from 'react';
+import { Router as DefaultRouter, Route, Switch } from 'react-router-dom';
+import dynamic from 'umi/dynamic';
+import renderRoutes from 'umi/_renderRoutes';
+import RendererWrapper0 from 'F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/pages/.umi/LocaleWrapper.jsx'
+
+let Router = require('dva/router').routerRedux.ConnectedRouter;
+
+let routes = [
+  {
+    "path": "/",
+    "redirect": "/base/salesTask",
+    "exact": true
+  },
+  {
+    "path": "/base",
+    "component": dynamic({ loader: () => import('../../layouts/BasicLayout'), loading: require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/components/PageLoading/index').default }),
+    "Routes": [require('../Authorized').default],
+    "authority": [
+      "admin",
+      "user"
+    ],
+    "routes": [
+      {
+        "path": "/base/salesTask",
+        "icon": "table",
+        "name": "salesTask",
+        "component": dynamic({ loader: () => import('../salesTask/index'), loading: require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/components/PageLoading/index').default }),
+        "exact": true
+      },
+      {
+        "path": "/base/salesHistory",
+        "icon": "dashboard",
+        "name": "salesHistory",
+        "component": dynamic({ loader: () => import('../salesHistory/index'), loading: require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/components/PageLoading/index').default }),
+        "exact": true
+      },
+      {
+        "path": "/base/detail",
+        "hideInMenu": true,
+        "name": "detail",
+        "component": dynamic({ loader: () => import('../detail/detail'), loading: require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/components/PageLoading/index').default }),
+        "exact": true
+      },
+      {
+        "component": () => React.createElement(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/node_modules/_umi-build-dev@1.2.6@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+      }
+    ]
+  },
+  {
+    "path": "/send",
+    "component": dynamic({ loader: () => import('../../layouts/BlankLayout'), loading: require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/components/PageLoading/index').default }),
+    "routes": [
+      {
+        "path": "/send/sendMessage/:taskType/:time/:type/:name",
+        "component": dynamic({ loader: () => import('../sendMessage/index'), loading: require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/src/components/PageLoading/index').default }),
+        "exact": true
+      },
+      {
+        "component": () => React.createElement(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/node_modules/_umi-build-dev@1.2.6@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+      }
+    ]
+  },
+  {
+    "component": () => React.createElement(require('F:/eclipseWork/glsx-websp/gldb-admin-bma/src/main/webapp/node_modules/_umi-build-dev@1.2.6@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+  }
+];
+window.g_plugins.applyForEach('patchRoutes', { initialValue: routes });
+
+export default function() {
+  return (
+<RendererWrapper0>
+          <Router history={window.g_history}>
+      { renderRoutes(routes, {}) }
+    </Router>
+        </RendererWrapper0>
+  );
+}
